@@ -1,10 +1,10 @@
 import utils from '../utils';
-import template from 'lodash.template';
-import isEqual from 'lodash.isequal';
+import { Eta } from 'eta/dist/browser.umd.js';
 
 let fs = require('fs'); // substack/brfs#39
-let instructionsTemplate = template(fs.readFileSync(__dirname + '/../templates/instructions.html', 'utf8'));
-let errorTemplate = template(fs.readFileSync(__dirname + '/../templates/error.html', 'utf8'));
+const eta = new Eta({ useWith: true });
+let instructionsTemplate = eta.compile(fs.readFileSync(__dirname + '/../templates/instructions.html', 'utf8'));
+let errorTemplate = eta.compile(fs.readFileSync(__dirname + '/../templates/error.html', 'utf8'));
 
 /**
  * Summary/Instructions controller
@@ -29,7 +29,7 @@ export default class Instructions {
     this.store.subscribe(() => {
       const { hoverMarker, setRouteIndex } = this.actions;
       const { routeIndex, unit, directions, error, compile, instructions: instructionsOptions } = this.store.getState();
-      const shouldRender = !isEqual(directions[routeIndex], this.directions);
+      const shouldRender = JSON.stringify(directions[routeIndex]) !== JSON.stringify(this.directions);
 
       if (error) {
         this.container.innerHTML = errorTemplate({ error });

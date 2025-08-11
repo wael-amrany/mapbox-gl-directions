@@ -70,9 +70,7 @@
   },
   "dependencies": {
     "@mapbox/polyline": "^1.1.1",
-    "lodash.debounce": "^4.0.8",
-    "lodash.isequal": "^4.5.0",
-    "lodash.template": "^4.2.5",
+    "eta": "^3.2.0",
     "merge-options": "^3.0.4",
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.2",
