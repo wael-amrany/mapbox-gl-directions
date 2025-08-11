@@ -21,9 +21,9 @@
   },
   "scripts": {
     "prepublish": "npm run build",
-    "start": "NODE_ENV=development budo example/index.js:example/bundle.js --live",
-    "build": "NODE_ENV=production mkdir -p dist && browserify -s MapboxDirections src/index.js > dist/mapbox-gl-directions.js && cp src/mapbox-gl-directions.css dist",
-    "test": "NODE_ENV=test npm run lint && browserify test/index.js | smokestack -b firefox | tap-status",
+    "start": "cross-env NODE_ENV=development budo example/index.js:example/bundle.js --live",
+    "build": "cross-env NODE_ENV=production shx mkdir -p dist && browserify -s MapboxDirections src/index.js > dist/mapbox-gl-directions.js && shx cp src/mapbox-gl-directions.css dist",
+    "test": "cross-env NODE_ENV=test npm run lint && browserify test/index.js | smokestack -b firefox | tap-status",
     "docs": "documentation build src/directions.js --shallow --format=md > API.md",
     "lint": "eslint --no-eslintrc -c .eslintrc src"
   },
@@ -58,13 +58,15 @@
     "insert-css": "^2.0.0",
     "json-loader": "^0.5.7",
     "lodash.once": "^4.0.0",
-    "mapbox-gl": "^3.2.0",
+    "mapbox-gl": "^3.14.0",
     "smokestack": "^3.6.0",
     "tap-status": "^1.0.1",
     "tape": "^4.6.0",
     "transform-loader": "^0.2.4",
-    "webpack": "^5.75.0",
-    "webworkify-webpack": "^2.1.5"
+    "webpack": "^5.101.0",
+    "webworkify-webpack": "^2.1.5",
+    "cross-env": "^10.0.0",
+    "shx": "^0.4.0"
   },
   "dependencies": {
     "@mapbox/polyline": "^1.1.1",
