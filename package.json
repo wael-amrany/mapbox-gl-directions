@@ -1,6 +1,6 @@
 {
   "name": "@g9t3n/mapbox-gl-directions",
-  "version": "4.3.1",
+  "version": "4.3.2",
   "description": "A mapboxgl plugin for the Mapbox Directions API",
   "main": "./src/index.js",
   "browserify": {
@@ -20,9 +20,9 @@
     "mapbox-gl": "^1 || ^2 || ^3"
   },
   "scripts": {
-  "start": "cross-env NODE_ENV=development budo example/index.js:example/bundle.js --live",
-"build": "cross-env NODE_ENV=production shx mkdir -p dist && browserify -s MapboxDirections src/index.js > dist/mapbox-gl-directions.js && shx cp src/mapbox-gl-directions.css dist",
-"prepublishOnly": "npm run build",
+    "prepublish": "npm run build",
+    "start": "NODE_ENV=development budo example/index.js:example/bundle.js --live",
+    "build": "NODE_ENV=production mkdir -p dist && browserify -s MapboxDirections src/index.js > dist/mapbox-gl-directions.js && cp src/mapbox-gl-directions.css dist",
     "test": "NODE_ENV=test npm run lint && browserify test/index.js | smokestack -b firefox | tap-status",
     "docs": "documentation build src/directions.js --shallow --format=md > API.md",
     "lint": "eslint --no-eslintrc -c .eslintrc src"
