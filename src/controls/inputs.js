@@ -20,7 +20,7 @@ export default class Inputs {
   constructor(el, store, actions, map) {
     const { originQuery, destinationQuery, profile, controls } = store.getState();
 
-    el.innerHTML = tmpl({
+    el.innerHTML = eta.render(tmpl, {
       originQuery,
       destinationQuery,
       profile,

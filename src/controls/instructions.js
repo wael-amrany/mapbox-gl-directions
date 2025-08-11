@@ -32,7 +32,7 @@ export default class Instructions {
       const shouldRender = JSON.stringify(directions[routeIndex]) !== JSON.stringify(this.directions);
 
       if (error) {
-        this.container.innerHTML = errorTemplate({ error });
+        this.container.innerHTML = eta.render(errorTemplate, { error });
         return;
       }
 
@@ -52,7 +52,7 @@ export default class Instructions {
           });
         }
 
-        this.container.innerHTML = instructionsTemplate({
+        this.container.innerHTML = eta.render(instructionsTemplate, {
           routeIndex,
           routes: directions.length,
           steps: allSteps,
