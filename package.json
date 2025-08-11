@@ -1,8 +1,8 @@
 {
   "name": "@g9t3n/mapbox-gl-directions",
-  "version": "4.4.3",
+  "version": "4.4.4",
   "description": "A mapboxgl plugin for the Mapbox Directions API",
-  "main": "./src/index.js",
+  "main": "./dist/mapbox-gl-directions.js",
   "browserify": {
     "transform": [
       [
@@ -15,6 +15,9 @@
       ],
       "brfs"
     ]
+  },
+  "browser": {
+    "eta": "eta/dist/browser.umd.js"
   },
   "peerDependencies": {
     "mapbox-gl": "^1 || ^2 || ^3"
@@ -50,6 +53,7 @@
     "@babel/preset-env": "^7.20.2",
     "babel-plugin-transform-inline-environment-variables": "^6.8.0",
     "babelify": "^10.0.0",
+    "aliasify": "^2.1.0",
     "brfs": "^2.0.2",
     "browserify": "^17.0.0",
     "budo": "^11.8.4",

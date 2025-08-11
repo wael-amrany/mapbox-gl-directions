@@ -1,5 +1,5 @@
 import Geocoder from './geocoder';
-import { Eta } from 'eta/dist/browser.umd.js';
+import { Eta } from 'eta';
 import extent from 'turf-extent';
 import utils from '../utils';
 

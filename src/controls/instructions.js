@@ -1,5 +1,5 @@
 import utils from '../utils';
-import { Eta } from 'eta/dist/browser.umd.js';
+import { Eta } from 'eta';
 
 let fs = require('fs'); // substack/brfs#39
 const eta = new Eta({ useWith: true });
