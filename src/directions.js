@@ -34,7 +34,7 @@ import Instructions from './controls/instructions';
  * @param {Object} [options.instructions]
  * @param {Boolean} [options.instructions.showWaypointInstructions=true] Hide or display instructions for waypoints in the route
  * @param {Number} [options.zoom=16] If no bbox exists from the geocoder result, the zoom you set here will be used in the flyTo.
- * @param {String} [options.language="en"] The language of returned turn-by-turn text instructions. See supported languages : https://docs.mapbox.com/api/navigation/#instructions-languages
+ * @param {String} [options.language="ar"] The language of returned turn-by-turn text instructions. See supported languages : https://docs.mapbox.com/api/navigation/#instructions-languages
  * @param {String} [options.placeholderOrigin="اختر مكان البدء"] If set, this text will appear as the placeholder attribute for the origin input element.
  * @param {String} [options.placeholderDestination="اختر الوجهة"] If set, this text will appear as the placeholder attribute for the destination input element.
  * @param {Boolean} [options.flyTo=true] If false, animating the map to a selected result is disabled.
